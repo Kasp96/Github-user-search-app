@@ -8,6 +8,7 @@
 	.theme-btn {
 		background-color: transparent;
 		border: none;
+		top: 25%;
 
 		.theme-name {
 			font-size: var(--fz-12);
@@ -19,9 +20,21 @@
 	}
 	.light-btn {
 		display: flex;
+		right: 0;
+		transition: top 0.5s ease-in-out;
 	}
 	.dark-btn {
-		display: none;
+		display: flex;
+		right: -50%;
+		transition: right 0.5s ease-in-out;
+	}
+	.animate-light {
+		top: -150%;
+		transition: top 0.5s ease-in-out;
+	}
+	.animate-dark {
+		right: 0;
+		transition: right 0.5s ease-in-out;
 	}
 	.search-box {
 		padding: 7px;
