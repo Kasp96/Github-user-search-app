@@ -29,7 +29,7 @@
 		transition: right 0.5s ease-in-out;
 	}
 	.animate-light {
-		top: -150%;
+		top: -175%;
 		transition: top 0.5s ease-in-out;
 	}
 	.animate-dark {
@@ -69,6 +69,7 @@
 	}
 	.user-panel {
 		padding-block: 32px;
+		padding: 32px 24px;
 		border-radius: 12px;
 		background-color: var(--clr-navy-700);
 

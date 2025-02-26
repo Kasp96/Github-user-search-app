@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="container-xl p-0">
+    <div class="container-xl d-flex flex-column align-items-center p-0">
         <div class="app px-4 overflow-hidden">
             <div class="app-top d-flex justify-content-between align-items-center position-relative">
     <h1 class="app-heading">devfinder</h1>
@@ -27,11 +27,11 @@
     </button>
 </div>
             <div class="search-box d-flex align-items-center">
-    <img class="search-img px-2" src="../images/icon-search.svg" alt="">
+    <img class="search-img px-2 px-md-4" src="../images/icon-search.svg" alt="">
     <input class="search-input w-100" type="search" placeholder="Search GitHub username...">
     <button class="search-btn">Search</button>
 </div>
-            <div class="user-panel px-4">
+            <div class="user-panel">
     <div class="user-top d-flex align-items-center">
         <img class="rat" src="../images/rat.png" alt="">
         <div class="basic-info d-flex flex-column gap-2">
@@ -41,21 +41,21 @@
         </div>
     </div>
     <p class="user-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, animi.</p>
-    <div class="user-stats d-flex justify-content-evenly">
-        <div class="d-flex flex-column align-items-center gap-2">
+    <div class="user-stats d-flex align-items-center justify-content-evenly justify-content-md-start">
+        <div class="d-flex flex-column align-items-center align-items-md-start gap-2 ms-md-3">
             <h4>Repos</h4>
             <p class="amount">8</p>
         </div>
-        <div class="d-flex flex-column align-items-center gap-2">
+        <div class="d-flex flex-column align-items-center align-items-md-start gap-2">
             <h4>Followers</h4>
             <p class="amount">3938</p>
         </div>
-        <div class="d-flex flex-column align-items-center gap-2">
+        <div class="d-flex flex-column align-items-center align-items-md-start gap-2">
             <h4>Following</h4>
             <p class="amount">9</p>
         </div>
     </div>
-    <div class="links d-flex flex-column gap-3">
+    <div class="links d-flex flex-column gap-3 flex-wrap">
         <div class="d-flex align-items-center gap-3">
             <div class="item d-flex">
                 <svg height="20" width="14" xmlns="http://www.w3.org/2000/svg">

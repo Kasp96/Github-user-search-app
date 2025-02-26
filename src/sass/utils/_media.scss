@@ -1,0 +1,69 @@
+@media (min-width: 576px) {
+	.app {
+		max-width: 620px;
+
+		.app-top {
+			.theme-name {
+				font-size: var(--fz-14);
+				letter-spacing: 2px;
+			}
+		}
+		.search-box {
+			.search-img {
+				width: 80px;
+			}
+
+			.search-input {
+				font-size: var(--fz-16);
+			}
+			.search-input::placeholder {
+				font-size: var(--fz-18);
+			}
+			.search-btn {
+				font-size: var(--fz-17);
+			}
+		}
+		.user-panel {
+			padding: 39px 40px;
+
+			.rat {
+				width: 115px;
+			}
+			.user-top {
+				.basic-info {
+					margin-left: 40px;
+
+					.github-name {
+						font-size: var(--fz-24);
+					}
+					.github-link {
+						font-size: var(--fz-16);
+					}
+				}
+			}
+			.user-info,
+			.date-joined {
+				font-size: var(--fz-15);
+			}
+			.user-stats {
+				margin-inline: auto;
+				gap: 5.5rem;
+				height: 90px;
+
+				h4 {
+					font-size: var(--fz-13);
+				}
+				p {
+					font-size: var(--fz-22);
+				}
+			}
+			.links {
+				height: 75px;
+
+				.link-description {
+					font-size: var(--fz-14);
+				}
+			}
+		}
+	}
+}
