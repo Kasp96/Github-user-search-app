@@ -1,0 +1,61 @@
+.user-panel {
+    padding-block: 32px;
+    padding: 32px 24px;
+    border-radius: 12px;
+    background-color: var(--clr-navy-700);
+
+    .github-user-avatar {
+        width: 70px;
+        border-radius: 50%;
+    }
+
+    .user-top {
+        .basic-info {
+            margin-left: 19px;
+
+            .github-name {
+                font-size: var(--fz-16);
+                font-weight: 600;
+                color: var(--clr-light-100);
+            }
+            .github-link {
+                font-size: var(--fz-13);
+                color: var(--clr-blue-400);
+            }
+        }
+    }
+    .user-info,
+    .date-joined {
+        font-size: var(--fz-13);
+        color: var(--clr-light-200);
+    }
+    .user-info {
+        margin-top: 27px;
+        line-height: 25px;
+    }
+    .user-stats {
+        padding: 22px 16px;
+        margin-block: 27px;
+        background-color: var(--clr-navy-900);
+        border-radius: 12px;
+
+        h4 {
+            font-size: var(--fz-11);
+            color: var(--clr-light-200);
+        }
+        p {
+            font-weight: 600;
+            color: var(--clr-white);
+        }
+    }
+    .item {
+        width: 20px;
+    }
+    .link-description {
+        font-size: var(--fz-13);
+        color: var(--clr-link-text);
+    }
+    .link-description:hover {
+        text-decoration: underline;
+    }
+}

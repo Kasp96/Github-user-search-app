@@ -3,6 +3,7 @@
 	--clr-black: hsl(0, 0%, 0%);
 	--clr-blue-400: hsl(212, 100%, 50%);
 	--clr-btn: hsl(212, 100%, 50%);
+	--clr-btn-hover: hsl(212, 100%, 69%);
 	--clr-light-100: hsl(0, 0%, 100%);
 	--clr-link-text: hsl(0, 0%, 100%);
 	--clr-btn-text: hsl(0, 0%, 100%);
@@ -14,6 +15,8 @@
 	--clr-navy-900: hsl(220, 40%, 13%);
 	--clr-gray-500: hsl(217, 20%, 51%);
 	--clr-dark-800: hsl(217, 21%, 21%);
+	--clr-theme-light-hover: hsl(222, 44%, 70%);
+	--clr-theme-dark-hover: hsl(220, 18%, 16%);
 
 	--ff-primary: 'Space Mono', serif;
 
@@ -37,10 +40,4 @@
 	--fz-33: 33px;
 	--fz-36: 36px;
 	--fz-38: 38px;
-
-	// h1 26px
-	// h2 22px
-	// h3 16px
-	// h4 13px
-	// body 15px
 }

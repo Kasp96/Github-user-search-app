@@ -1,0 +1,59 @@
+.app {
+	padding-block: 32px;
+	.app-heading {
+		font-size: var(--fz-26);
+		font-weight: 600;
+		color: var(--clr-white);
+	}
+	.theme-btn {
+		background-color: transparent;
+		border: none;
+		top: 25%;
+
+		.theme-name {
+			font-size: var(--fz-12);
+			font-weight: 600;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			color: var(--clr-light-200);
+		}
+	}
+	.light-btn {
+		display: flex;
+		right: 0;
+		transition: top 0.5s ease-in-out;
+
+		svg {
+			fill: #dddddd;
+		}
+	}
+	.light-btn:hover svg {
+		fill: var(--clr-theme-light-hover);
+	}
+	.light-btn:hover .theme-name {
+		color: var(--clr-theme-light-hover);
+	}
+	.dark-btn {
+		display: flex;
+		right: -50%;
+		transition: right 0.5s ease-in-out;
+
+		svg {
+			fill: #697c9b;
+		}
+	}
+	.dark-btn:hover svg {
+		fill: var(--clr-theme-dark-hover);
+	}
+	.dark-btn:hover .theme-name {
+		color: var(--clr-theme-dark-hover);
+	}
+	.animate-light {
+		top: -175%;
+		transition: top 0.5s ease-in-out;
+	}
+	.animate-dark {
+		right: 0;
+		transition: right 0.5s ease-in-out;
+	}
+}
