@@ -80,6 +80,14 @@ const fetchAPI = async (initialUser) => {
 					item.style.opacity = '1';
 					const svg = item.previousElementSibling.querySelector('svg');
 					svg.style.opacity = '1';
+					if (data.blog.includes)
+						// tu dzialamy
+					linksArr[1].href = `https://${data.blog}`;
+					linksArr[2].href = `https://x.com/${data.twitter_username}`;
+					linksArr[3].href = `https://github.com/${data.company.replace(
+						'@',
+						''
+					)}`;
 				}
 			});
 		}
