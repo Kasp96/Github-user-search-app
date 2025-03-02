@@ -12,13 +12,7 @@ const userBio = document.querySelector('.user-bio');
 const reposAmount = document.querySelector('.repos');
 const followersAmount = document.querySelector('.followers');
 const followingAmount = document.querySelector('.following');
-
-const location = document.querySelector('.location');
-const blog = document.querySelector('.blog');
-const twitter = document.querySelector('.twitter');
-const twitterSvg = twitter.previousElementSibling.querySelector('svg');
-const company = document.querySelector('.company');
-const links = document.querySelectorAll('.link-des')
+const links = document.querySelectorAll('.link-description');
 
 let initialUser = 'octocat';
 
@@ -44,13 +38,18 @@ const fetchAPI = async (initialUser) => {
 				.slice(0, 3);
 			const newYear = newData.getFullYear();
 
-			githubName.textContent = data.name;
+			if (data.name === null || data.name === '') {
+				githubName.textContent = data.login;
+			} else {
+				githubName.textContent = data.name;
+			}
 			githubLink.textContent = '@' + data.login;
 			day.textContent = newDay;
 			month.textContent = newMonth;
 			year.textContent = newYear;
 			if (data.bio === null) {
 				userBio.textContent = 'This profile has no bio';
+				userBio.style.opacity = '0.7';
 			} else {
 				userBio.textContent = data.bio;
 			}
@@ -58,39 +57,38 @@ const fetchAPI = async (initialUser) => {
 			reposAmount.textContent = data.public_repos;
 			followersAmount.textContent = data.followers;
 			followingAmount.textContent = data.following;
-			location.textContent = data.location;
 
+			const linksArr = [...links];
 			const fetchedLinksArr = [
+				data.location,
+				data.blog,
 				data.twitter_username,
 				data.company,
-				data.blog,
-				data.company,
 			];
-			console.log(fetchedLinksArr);
-			fetchedLinksArr.forEach((link) => {
-				if (link === null) {
-					link.textContent = 'Not Available';
-					link.style.opacity = '0.5';
-					// twitterSvg.style.opacity = '0.5';
+
+			fetchedLinksArr.forEach((link, index) => {
+				const item = linksArr[index];
+				if (link === null || link === '') {
+					item.textContent = 'Not available';
+					item.href = link ? link : '#';
+					item.style.opacity = '0.5';
+					const svg = item.previousElementSibling.querySelector('svg');
+					svg.style.opacity = '0.5';
+				} else {
+					item.textContent = link;
+					item.href = link;
+					item.style.opacity = '1';
+					const svg = item.previousElementSibling.querySelector('svg');
+					svg.style.opacity = '1';
 				}
 			});
-
-			// if (data.twitter_username === null) {
-			// 	twitter.textContent = 'Not Available';
-			// 	twitter.style.opacity = '0.5';
-			// 	twitterSvg.style.opacity = '0.5';
-			// } else {
-			// 	twitter.style.opacity = '1';
-			// 	twitterSvg.style.opacity = '1';
-			// 	twitter.textContent = data.twitter_username;
-			// }
-			blog.textContent = data.blog;
-			company.textContent = data.company;
 		}
 	} catch (error) {
 		console.error('API error:', error);
 	}
 };
+
+// - **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
 searchBtn.addEventListener('click', () => {
 	initialUser = searchInput.value;
@@ -100,6 +98,7 @@ searchBtn.addEventListener('click', () => {
 	} else {
 		fetchAPI(initialUser);
 	}
+	searchInput.value = '';
 });
 
 document.addEventListener('keydown', (e) => {
