@@ -80,9 +80,11 @@ const fetchAPI = async (initialUser) => {
 					item.style.opacity = '1';
 					const svg = item.previousElementSibling.querySelector('svg');
 					svg.style.opacity = '1';
-					if (data.blog.includes)
-						// tu dzialamy
-					linksArr[1].href = `https://${data.blog}`;
+					if (!data.blog.includes('https://')) {
+						linksArr[1].href = 'https://' + data.blog;
+					} else {
+						linksArr[1].href = data.blog;
+					}
 					linksArr[2].href = `https://x.com/${data.twitter_username}`;
 					linksArr[3].href = `https://github.com/${data.company.replace(
 						'@',
@@ -95,8 +97,6 @@ const fetchAPI = async (initialUser) => {
 		console.error('API error:', error);
 	}
 };
-
-// - **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
 searchBtn.addEventListener('click', () => {
 	initialUser = searchInput.value;
