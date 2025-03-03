@@ -1,5 +1,5 @@
+export const searchInput = document.querySelector('.search-input');
 const searchImg = document.querySelector('.search-img');
-const searchInput = document.querySelector('.search-input');
 const inputError = document.querySelector('.error');
 const searchBtn = document.querySelector('.search-btn');
 const githubName = document.querySelector('.github-name');
@@ -86,10 +86,14 @@ const fetchAPI = async (initialUser) => {
 						linksArr[1].href = data.blog;
 					}
 					linksArr[2].href = `https://x.com/${data.twitter_username}`;
-					linksArr[3].href = `https://github.com/${data.company.replace(
-						'@',
-						''
-					)}`;
+					if (data.company) {
+						linksArr[3].href = `https://github.com/${data.company.replace(
+							'@',
+							''
+						)}`;
+					} else {
+						linksArr[3].href = '#';
+					}
 				}
 			});
 		}
@@ -101,12 +105,17 @@ const fetchAPI = async (initialUser) => {
 searchBtn.addEventListener('click', () => {
 	initialUser = searchInput.value;
 	if (searchInput.value === '' || searchInput.value === 0) {
+		searchInput.placeholder = '';
 		inputError.style.display = 'block';
 		return;
 	} else {
 		fetchAPI(initialUser);
 	}
 	searchInput.value = '';
+});
+searchInput.addEventListener('keyup', () => {
+	searchInput.placeholder = 'Search GitHub username';
+	inputError.style.display = 'none';
 });
 
 document.addEventListener('keydown', (e) => {
