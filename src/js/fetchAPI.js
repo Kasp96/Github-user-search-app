@@ -72,9 +72,11 @@ const fetchAPI = async (initialUser) => {
 					item.textContent = 'Not available';
 					item.href = link ? link : '#';
 					item.style.opacity = '0.5';
+					item.style.pointerEvents = 'none';
 					const svg = item.previousElementSibling.querySelector('svg');
 					svg.style.opacity = '0.5';
 				} else {
+					item.style.pointerEvents = 'auto';
 					item.textContent = link;
 					item.href = link;
 					item.style.opacity = '1';
